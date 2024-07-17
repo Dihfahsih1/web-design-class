@@ -1,0 +1,4 @@
+Inline css
+    - We write the styles inside the open tag of the element using the style attribute
+
+Internal css 

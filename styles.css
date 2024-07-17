@@ -1,0 +1,22 @@
+.evans{
+    color:green;
+    font-size:40px;
+    text-align: right;
+    text-decoration: none;
+    }
+
+#agie{
+    color:blue;
+    font-size:100px;
+    text-align: center;
+    text-decoration: line-through;
+}
+
+p{
+   
+    text-decoration: none; 
+    font-size: 30px;
+}
+body{
+    background-color:burlywood; text-align: center;
+}
