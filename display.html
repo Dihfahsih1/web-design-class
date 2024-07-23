@@ -3,93 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <title>Table</title>
 
-    <style>
-        #table{
-            width: 50%;
-            border-collapse: collapse;
-        }
-
-        .td{
-            border: 1px solid red;
-            padding: 3px;
-        }
-        .th{
-            border: 1px solid goldenrod;
-            padding: 3px;
-            color: blue;
-            font-weight: 900;
-            text-decoration-color: brown;
-        }
-        .tr{
-            border: 5px solid green;
-
-
-        }
-
-        .tr:nth-child(even){
-            background-color: rgb(61, 92, 151);
-            border: 5px solid green;
-        }
-        .tr:hover{
-            background-color: rgb(196, 39, 99);
-            cursor: pointer;
-        }
-    </style>
-  <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
+    <div class="container">
+        <div class="row bg-dark">
+            <!-- Menu Row -->
+            <nav class="nav">
+                <a class="nav-link text-white" href="index.html">HOME</a>
+                <a class="nav-link text-white" href="about.html">ABOUT</a>
+                <a class="nav-link text-white" href="pets.html">PETS</a>
+                <a class="nav-link text-white" href="contact.html">CONTACT</a>
+                <a class="nav-link text-info" href="display.html">TABLE</a>
+            </nav>
+        </div>
 
-    <a href="index.html">HOME</a>
-    <a href="about.html">ABOUT</a>
-    <a href="pets.html">PETS</a>
-    <a href="contact.html">CONTACT</a>
-    <a href="display.html">TABLE</a>
-    
-    <table id="table">
-        <caption>A table showing students</caption>
-        <!-- <tr>: Table row -->
-            <tr class="tr">
-                <th class="th">Name</th> <!-- <th>: Table header cell -->
-                <th class="th">Age</th>
-                <th class="th">Class</th>
-                <th class="th">Address</th>
-            </tr>
+        <div class="row mt-4">
+            <table id="table" class="table table-striped table-bordered">
+                <caption>A table showing students</caption>
+                <!-- <tr>: Table row -->
+                    <tr class="table-primary">
+                        <th class="th">Name</th> <!-- <th>: Table header cell -->
+                        <th class="th">Age</th>
+                        <th class="th">Class</th>
+                        <th class="th">Address</th>
+                    </tr>
+                
         
+                <tbody>
+                    <tr  class="table-success">
+                        <td class="td">John</td> <!-- <td>: Table data cell -->
+                        <td class="td">40</td>
+                        <td class="td">Grade 5</td>
+                        <td class="td">K'la</td>
+                    </tr>
+        
+                    <tr  class="table-danger">
+                        <td class="td">Joy</td>
+                        <td class="td">50</td>
+                        <td class="td">Grade 6</td>
+                        <td class="td">Mukono</td>
+                    </tr>
+        
+                    <tr  class="table-warning">
+                        <td class="td">Joy</td>
+                        <td class="td">50</td>
+                        <td class="td">Grade 6</td>
+                        <td class="td">Mukono</td>
+                    </tr>
+        
+                    <tr  class="table-light">
+                        <td class="td">Joy</td>
+                        <td class="td">50</td>
+                        <td class="td">Grade 6</td>
+                        <td class="td">Mukono</td>
+                    </tr>
+        
+                </tbody>
+            </table>
+        </div>
 
-        <tbody>
-            <tr  class="tr">
-                <td class="td">John</td> <!-- <td>: Table data cell -->
-                <td class="td">40</td>
-                <td class="td">Grade 5</td>
-                <td class="td">K'la</td>
-            </tr>
+        <div class="row">
+            <hr />
+            <!-- The Footer row -->
+             All rights reserved || Copyright@2024
 
-            <tr  class="tr">
-                <td class="td">Joy</td>
-                <td class="td">50</td>
-                <td class="td">Grade 6</td>
-                <td class="td">Mukono</td>
-            </tr>
+        </div>
+    </div>
 
-            <tr  class="tr">
-                <td class="td">Joy</td>
-                <td class="td">50</td>
-                <td class="td">Grade 6</td>
-                <td class="td">Mukono</td>
-            </tr>
 
-            <tr  class="tr">
-                <td class="td">Joy</td>
-                <td class="td">50</td>
-                <td class="td">Grade 6</td>
-                <td class="td">Mukono</td>
-            </tr>
-
-        </tbody>
-    </table>
+    
     
 </body>
 </html>
