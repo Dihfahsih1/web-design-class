@@ -1,0 +1,13 @@
+Data Types in PHP
+-String -> " "
+-Integer-> whole numbers(-2b to 2b )
+-Float(Double) -> Decimal number(.)
+-Boolean -> either true or false
+-Array
+-Object
+
+Loops
+-While loop
+-do-while loop 
+-for loop 
+-foreach loop
