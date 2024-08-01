@@ -11,14 +11,9 @@
 <body>
     <div class="container">
         <div class="row bg-dark">
-            <!-- Menu Row -->
-            <nav class="nav">
-                <a class="nav-link text-white" href="index.html">HOME</a>
-                <a class="nav-link text-white" href="about.html">ABOUT</a>
-                <a class="nav-link text-white" href="pets.html">PETS</a>
-                <a class="nav-link text-white" href="contact.html">CONTACT</a>
-                <a class="nav-link text-info" href="display.html">TABLE</a>
-            </nav>
+            <?php
+                include("nav.html");
+            ?> 
         </div>
 
         <div class="row mt-4">
@@ -76,6 +71,8 @@
 
 
     
-    
+    <?php
+        include('js.html');
+       ?>
 </body>
 </html>

@@ -11,13 +11,9 @@
 <body>
     <div class="container">
         <div class="row bg-dark">
-            <nav class="nav">
-                <a class="nav-link text-white" href="index.html">HOME</a>
-                <a class="nav-link text-white" href="about.html">ABOUT</a>
-                <a class="nav-link text-info" href="pets.html">PETS</a>
-                <a class="nav-link text-white" href="contact.html">CONTACT</a>
-                <a class="nav-link text-white" href="display.html">TABLE</a>
-            </nav>
+            <?php
+                    include("nav.html");
+                ?> 
         </div>
         <div class="row">
             <h1>The ugliest creatures</h1>
@@ -25,6 +21,8 @@
             <p>This is a cats family that people hate most</p>
         </div>
     </div>
-    
+    <?php
+        include('js.html');
+       ?>
 </body>
 </html>

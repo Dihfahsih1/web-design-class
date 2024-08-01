@@ -9,13 +9,9 @@
 
         <div class="container">
             <div class="row bg-dark">
-                <nav class="nav">
-                    <a class="nav-link text-white" href="index.html">HOME</a>
-                    <a class="nav-link text-info" href="about.html">ABOUT</a>
-                    <a class="nav-link text-white" href="pets.html">PETS</a>
-                    <a class="nav-link text-white" href="contact.html">CONTACT</a>
-                    <a class="nav-link text-white" href="display.html">TABLE</a>
-                </nav>
+                <?php
+                    include("nav.html");
+                ?> 
             </div>
         </div>
         
@@ -52,12 +48,18 @@
             </li>
         </ol>
 
+        <?php
+            include("functions.php");
+        ?>
+
         <video width="600"  height="500" controls poster="images/pets/Cats.jpg" muted>
             <source src="videos/worship.mp4" type="video/mp4">
             <track src="lyrics.vtt" kind="subtitles" srclang="en" label="English"></track>
 
         </video>
         <iframe width="300" height="300" src="https://www.youtube.com/embed/Rq9BDHZX3Vg" title="How Hibo became a Software Engineer and landed a job within few months" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        
+            <?php
+        include('js.html');
+       ?>
     </body>
 </html>
