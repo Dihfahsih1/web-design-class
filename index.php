@@ -1,3 +1,5 @@
+
+<?php $activePage = 'home';?>
 <html>
     <head>
         <title>Index Page</title>
@@ -71,7 +73,7 @@
                             <img src="images/pets/home.jpg" class="card-img" alt="">
                             <div class="card-img-overlay">
                                 <div class="card-title">
-                                    Pets are are cool to some people
+                                    Pets are cool to some people
                                 </div>
                                 <p class="card-text">
                                     It's hard for anyone on the team to see how it all fits together.

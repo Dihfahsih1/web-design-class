@@ -1,7 +1,7 @@
+<?php $activePage = 'about';?>
 <html>
     <head>
         <title>About Page</title>
-        <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
     </head>
 

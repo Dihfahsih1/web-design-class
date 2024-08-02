@@ -1,0 +1,20 @@
+1. Add Pets to my database
+    Attributes of a pet 
+        - Name(Text)
+        - Breed(Text)
+        - Weight(Number)
+        - Color(Text)
+        - Rate(Number)
+
+2. Processing(page)
+    - process_form.php
+
+3. Display the pets created
+    - display_pets.php
+
+4. Update a pet in the table
+    - update_form.php
+    - process_update.php 
+
+5. Delete a pet from the table 
+    - delete_pet.php

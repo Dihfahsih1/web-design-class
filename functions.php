@@ -1,14 +1,18 @@
 <?php
 
+function greet($name){
+    return "hello, ". $name ."<br>";
+    }
 
-function theSum($num1,$num2){
-    $sum = $num1 + $num2;
-
-    echo "The sum of $num1 and $num2 is:$sum";
+function add(int $a, int $b){
+    return $a + $b;
 }
 
-$x = 3;
-$y=5;
-
-theSum($x,$y);
+echo add(5,6);
+echo greet("Alice");
+greet("Agnes");
+greet("Bonney");
 ?>
+
+
+
