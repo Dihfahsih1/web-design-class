@@ -19,6 +19,13 @@
        
             <!-- Content Row -->
              <div class="col-lg-6">
+                <?php
+                    if (isset($_GET['status'])){
+                        if ($_GET['status'] == 'success'){
+                            echo "<p style='color:green'> The pet has been created successfully!</p>";
+                        }
+                    }
+                ?>
                 <h4>Create Pets Form</h4>
                 <form action="process_form.php" method="POST">
                     <div class="form-group">
@@ -45,7 +52,7 @@
 
              <div class="col-lg-6">
                 <h4>List of Other Pets</h4>
-                <img src="images/pets/Cats.png" class="img-fluid" alt="Pets">
+                <?php include("pets_list.php");?>
                 
              </div>
             

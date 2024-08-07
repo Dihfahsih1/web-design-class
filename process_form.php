@@ -1,4 +1,5 @@
 <?php
+    include('db_connect.php');
     if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
         #collect items from the post method that were sent to the server
@@ -9,14 +10,21 @@
         $rate=$_POST['rate'];
 
         #what should i do with this data?
-        #display the data.
+        #Insert into the database query
+        $sql="INSERT INTO registration(pet_name,pet_breed, pet_weight,pet_color, consumption_rate) VALUES(?,?,?,?,?)";
 
-        echo "<h2> Contact form submission</h2>";
-        echo "Pet's Name:".$name."<br>";
-        echo "Pet's Breed:".$breed_name."<br>";
-        echo "Pet's Weight:".$weight."<br>";
-        echo "Pet's Color:".$color."<br>";
-        echo "Pet's Consumption Rate:".$rate."<br>";
+
+        //prepare statement
+        if ($stmt = mysqli_prepare($connection, $sql)){
+
+            #bind parameters
+            mysqli_stmt_bind_param($stmt, "ssisi", $name, $breed_name, $weight, $color,$rate);
+            
+            #execute the statement
+            mysqli_stmt_execute($stmt);
+        }
+
+        header("Location: create_pets.php?status=success");
 
     }
 

@@ -1,4 +1,4 @@
-1. Add Pets to my database
+1. Add Pets to my database(pets)
     Attributes of a pet 
         - Name(Text)
         - Breed(Text)
