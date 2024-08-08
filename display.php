@@ -34,10 +34,9 @@
             <table id="table" class="table table-striped table-bordered">
                 <caption>A table showing Pets</caption>
                 <tr class="table-primary">
+                <th class="th">Number</th>
                     <th class="th">Name</th>
                     <th class="th">Breed</th>
-                    <th class="th">Weight</th>
-                    <th class="th">Color</th>
                     <th class="th">Consumption Rate</th>
                     <th class="th">Actions</th>
                 </tr>
@@ -50,10 +49,13 @@
                     ?> 
                         <!-- Put the retrieved data in a row -->
                         <tr class="table-success">
-                            <td class="td"><?php echo $row['pet_name']; ?></td>
+                            <td class="td"><?php echo $row['ID']; ?></td>
+                            <td class="td">
+                                <a href='details.php?param=<?php echo $row['ID'];?>'>
+                                    <?php echo $row['pet_name']; ?>
+                                </a>
+                            </td>
                             <td class="td"><?php echo $row['pet_breed']; ?></td>
-                            <td class="td"><?php echo $row['pet_weight']; ?></td>
-                            <td class="td"><?php echo $row['pet_color']; ?></td>
                             <td class="td"><?php echo $row['consumption_rate']; ?></td>
                             <td class="td">
                                 <button class="btn btn-success">Edit</button> | 
@@ -84,11 +86,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <?php
-                        if (isset($_GET['status']) && $_GET['status'] == 'success') {
-                            echo "<p style='color:green'>The pet has been created successfully!</p>";
-                        }
-                    ?>
                     <form action="process_form.php" method="POST">
                         <div class="form-group">
                             <label for="name">Pet's Name</label>
