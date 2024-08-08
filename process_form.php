@@ -24,7 +24,7 @@
             mysqli_stmt_execute($stmt);
         }
 
-        header("Location: create_pets.php?status=success");
+        header("Location: display.php?status=success");
 
     }
 

@@ -50,11 +50,7 @@
                 </form>
              </div>
 
-             <div class="col-lg-6">
-                <h4>List of Other Pets</h4>
-                <?php include("pets_list.php");?>
-                
-             </div>
+             
             
         </div>
 
