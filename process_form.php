@@ -52,12 +52,8 @@ Binding the BLOB:
 
 The mysqli_stmt_bind_param function is used to bind the parameters, including a placeholder for the BLOB.
 The placeholder for the BLOB data is passed as $null, and then the BLOB data is sent separately using mysqli_stmt_send_long_data.
-Corrected Data Type:
+
 
 Use "ssissb" in mysqli_stmt_bind_param where the last b is for BLOB data, and pass $null initially.
-Corrected Function Call:
 
 Correct the function to mysqli_stmt_send_long_data.
-Final Notes:
-Ensure that your db_connect.php file correctly sets up the $connection variable.
-If you still face issues, verify that file_get_contents is correctly reading the file and that the tmp_name path is valid. -->
