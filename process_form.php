@@ -1,38 +1,47 @@
 <?php
-    include('db_connect.php');
-    if ($_SERVER["REQUEST_METHOD"] == "POST"){
-        
-        #collect items from the post method that were sent to the server
-        $name=$_POST['pets_name'];
-        $breed_name=$_POST['breed'];
-        $weight=$_POST['weight'];
-        $color=$_POST['color'];
-        $rate=$_POST['rate'];
-        
+include('db_connect.php');
 
-        #what should i do with this data?
-        #Insert into the database query
-        $avatar_tmp_name=$_FILES['avatar']['tmp_name'];
-        $avatar_data = file_get_contents($avatar_tmp_name);
-        $sql="INSERT INTO registration(pet_name,pet_breed, pet_weight,pet_color, consumption_rate, avatar) VALUES(?,?,?,?,?,?)";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    # Collect items from the POST method
+    $name = $_POST['pets_name'];
+    $breed_name = $_POST['breed'];
+    $weight = $_POST['weight'];
+    $color = $_POST['color'];
+    $rate = $_POST['rate'];
+    
+    # Collect avatar data
+    $avatar_tmp_name = $_FILES['avatar']['tmp_name'];
+    $avatar_data = file_get_contents($avatar_tmp_name);
 
-        //prepare statement
-        if ($stmt = mysqli_prepare($connection, $sql)){
+    # Insert into the database query
+    $sql = "INSERT INTO registration (pet_name, pet_breed, pet_weight, pet_color, consumption_rate, avatar) VALUES (?, ?, ?, ?, ?, ?)";
 
-            #bind parameters
-            mysqli_stmt_bind_param($stmt, "ssisib", $name, $breed_name, $weight, $color,$rate,$avatar_data);
-            mysql_stmt_send_long_data($stmt, 'b',$avatar_data);
-            #execute the statement
-            mysqli_stmt_execute($stmt);
+    // Prepare the statement
+    if ($stmt = mysqli_prepare($connection, $sql)) {
+
+        # Bind parameters (excluding the BLOB data)
+        mysqli_stmt_bind_param($stmt, "ssissb", $name, $breed_name, $weight, $color, $rate, $null);
+
+        # Send the BLOB data
+        mysqli_stmt_send_long_data($stmt, 5, $avatar_data);
+
+        # Execute the statement
+        if (mysqli_stmt_execute($stmt)) {
+            header("Location: display.php?status=success");
+        } else {
+            echo "Error: " . mysqli_stmt_error($stmt);
         }
 
-        //header() redirects the user to another page specified in the location
-        header("Location: display.php?status=success");
-
+        # Close the statement
+        mysqli_stmt_close($stmt);
+    } else {
+        echo "Error: " . mysqli_error($connection);
     }
+} else {
+    echo "This page cannot be accessed using the GET method";
+}
 
-    else{
-        echo "This page can not be accessed using the get method";
-    }
+# Close the connection
+mysqli_close($connection);
 ?>
