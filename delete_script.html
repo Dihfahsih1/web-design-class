@@ -1,0 +1,34 @@
+
+    <!-- Deletion modal -->
+
+    <div class="modal fade" id="ConfirmDeleteModal">
+        <div class="modal-dialogue">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="ConfirmDeleteLabel"> Confirm Deletion</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close" ></button>
+                </div>
+
+                <div class="modal-body">
+                    Are you sure you want to delete this pet?
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"> Cancel</button>
+                    <a href="#" id="deleteBtn" class="btn btn-danger">Delete</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+    var confirmDeleteModal =document.getElementById('ConfirmDeleteModal');
+    confirmDeleteModal.addEventListener('show.bs.modal', function(event){
+        var button = event.relatedTarget;  //target that triggers the modal
+        var id = button.getAttribute('data-id'); //extract the infor using the passed id
+        var deleteBtn =document.getElementById('deleteBtn');
+        deleteBtn.setAttribute('href', 'delete.php?id=' + id);
+    });
+</script>

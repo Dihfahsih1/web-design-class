@@ -28,6 +28,8 @@
                         if ($_GET['status'] == 'success'){
                             echo "<p style='color:green'> The pet has been created successfully!</p>";
                         }
+                        echo "<p style='color:red'> The pet has been deleted successfully!</p>";
+
                     }
                 ?>
             <button class="btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#createPetModal">Create Pets</button>
@@ -59,7 +61,12 @@
                             <td class="td"><?php echo $row['consumption_rate']; ?></td>
                             <td class="td">
                                 <button class="btn btn-success">Edit</button> | 
-                                <button class="btn btn-danger">Delete</button>
+                                
+                                
+                                <button class="btn btn-danger btn-sm" data-bs-toggle="modal" 
+                                data-bs-target="#ConfirmDeleteModal" data-id='<?php echo $row['ID'];?>'>Delete</button>
+                              
+                                
                             </td>
                         </tr>
                     <?php
@@ -77,6 +84,26 @@
         </div>
     </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Bootstrap Modal -->
     <div class="modal fade" id="createPetModal" tabindex="-1" aria-labelledby="createPetModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -86,7 +113,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form action="process_form.php" method="POST">
+                    <form action="process_form.php" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="name">Pet's Name</label>
                             <input name="pets_name" type="text" class="form-control mb-2" required>
@@ -103,6 +130,9 @@
                             <label for="rate">Food Consumption Rate (%)</label>
                             <input name="rate" type="number" class="form-control mb-2" required>
 
+
+                            <label for="rate">Pet's Avatar</label>
+                            <input name="avatar" type="file" class="form-control mb-2" required>
                             <button type="submit" class="btn btn-primary">Create Pet</button>
                         </div>                    
                     </form>
@@ -111,8 +141,12 @@
         </div>
     </div>
 
+
+
+
+
+
     <?php include('js.html'); ?>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js"></script>
+    
 </body>
 </html>
