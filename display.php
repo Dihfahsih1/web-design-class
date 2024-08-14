@@ -28,8 +28,15 @@
                         if ($_GET['status'] == 'success'){
                             echo "<p style='color:green'> The pet has been created successfully!</p>";
                         }
-                        echo "<p style='color:red'> The pet has been deleted successfully!</p>";
 
+                        elseif($_GET['status'] == 'update'){
+                            echo "<p style='color:blue'> The pet has been updated successfully!</p>";
+                        }
+                        else{
+                            echo "<p style='color:red'> The pet has been deleted successfully!</p>";
+
+                        }
+                        
                     }
                 ?>
             <button class="btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="#createPetModal">Create Pets</button>
@@ -60,12 +67,15 @@
                             <td class="td"><?php echo $row['pet_breed']; ?></td>
                             <td class="td"><?php echo $row['consumption_rate']; ?></td>
                             <td class="td">
-                                <button class="btn btn-success">Edit</button> | 
+                            <a href="update_form.php?param=<?php echo $row['ID']; ?>" >
+                                <button class="btn btn-success">Edit</button> 
+                            </a>| 
+                            <a href="delete.php?param=<?php echo $row['ID']; ?>" >
+                                <button class="btn btn-danger">Delete</button>
+                            </a>
                                 
                                 
-                                <button class="btn btn-danger btn-sm" data-bs-toggle="modal" 
-                                data-bs-target="#ConfirmDeleteModal" data-id='<?php echo $row['ID'];?>'>Delete</button>
-                              
+                               
                                 
                             </td>
                         </tr>
@@ -144,6 +154,31 @@
 
 
 
+    <!-- Deletion modal -->
+
+    <div class="modal fade" id="ConfirmDeleteModal">
+        <div class="modal-dialogue">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-title" id="ConfirmDeleteLabel"> Confirm Deletion</h3>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close" ></button>
+                </div>
+
+                <div class="modal-body">
+                    Are you sure you want to delete this pet?
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal"> Cancel</button>
+                    <a href="#" id="deleteBtn" class="btn btn-danger">Delete</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+   
 
 
     <?php include('js.html'); ?>
